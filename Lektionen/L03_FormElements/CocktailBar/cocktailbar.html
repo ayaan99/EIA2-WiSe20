@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocktailbar</title>
+    <link rel="stylesheet" href="cocktailbar.css">
+    <script src="cocktailbar.js"></script>
+</head>
+
+<body>
+    <h1>Cocktailbar</h1>
+    <p>Stell dir hier deinen eigenen Cocktail zusammen und bestelle ganz bequem von zu Hause.</p>
+
+    <form>
+        <div id="form">
+            <h2>Choose your items</h2>
+
+            <fieldset id="fsDrink">
+                <legend>Drink</legend>
+                <select name="Drink" id="drink">
+                    <option value="drink1" price="25">Mojito</option>
+                    <option value="drink1" price="30">Coconut Kiss</option>
+                    <option value="drink1" price="21">Long Island</option>
+                </select>
+            </fieldset>
+
+            <fieldset id="fsContainer">
+                <legend>Container</legend>
+                <input type="radio" name="container" value="slim" id="slim" price="3.50">
+                <label for="slim">Slim</label>
+                <input type="radio" name="container" value="wide" id="wide" price="4.00">
+                <label for="wide">Wide</label>
+                <input type="radio" name="container" value="paper" id="paper" price="1.50">
+                <label for="paper">Paper</label>
+            </fieldset>
+
+            <fieldset id="fsExtras">
+                <legend>Extras</legend>
+                <input type="checkbox" name="extras" value="ice" id="ice" price="0.50">
+                <label for="ice">Ice</label>
+                <input type="checkbox" name="extras" value="lemon" id="lemon" price="0.50">
+                <label for="lemon">Lemon</label>
+                <input type="checkbox" name="extras" value="orange" id="orange" price="0.50">
+                <label for="orange">Orange</label>
+                <input type="checkbox" name="extras" value="mint" id="mint" price="0.50">
+                <label for="mint">Mint</label>
+            </fieldset>
+
+            <fieldset id="fsAmount">
+                <legend>Amount</legend>
+                <input type="range" name="amount" id="amount" min="0.1" max="1.0" step="0.1">
+                <label for="amount">1 Liter</label>
+
+                <progress value="0" max="1"> </progress>
+            </fieldset>
+        </div>
+    </form>
+
+    <div>
+        <h2>Your order</h2>
+        <div id="order">
+            no order yet
+        </div>
+    </div>
+
+</body>
+
+</html>
