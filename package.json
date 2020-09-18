@@ -1,0 +1,21 @@
+{
+  "name": "cocktailbar2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "start": "node Lektionen/L06_Server/cocktailbar/Server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayaan99/EIA2-WiSe20.git"
+  },
+  "author": "ayaan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayaan99/EIA2-WiSe20/issues"
+  },
+  "homepage": "https://github.com/ayaan99/EIA2-WiSe20#readme"
+}
