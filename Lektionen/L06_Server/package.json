@@ -1,0 +1,11 @@
+{
+  "name": "cocktailbar2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node cocktailbar/Server/server.js"
+  },
+  "author": "ayaan",
+  "license": "ISC"
+}
