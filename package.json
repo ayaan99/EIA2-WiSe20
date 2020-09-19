@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "@types/mongodb": "^3.5.27",
+    "mogodb": "0.0.1-security"
+  },
   "devDependencies": {},
   "scripts": {
     "start": "node Lektionen/L06_Server/cocktailbar/Server/server.js"
