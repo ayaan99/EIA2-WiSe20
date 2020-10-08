@@ -5,10 +5,10 @@ var L00_Preface;
     function handleLoad() {
         var person = prompt("What's your name?");
         if (person == null || person == "") {
-            window.alert("I don't know your name yet.");
+            document.querySelector("#text").innerHTML = "I don't know your name yet.";
         }
         else {
-            window.alert("Hello " + person + "! Have a nice day :)");
+            document.querySelector("#text").innerHTML = "Hello " + person + "! Have a nice day :)";
         }
     }
 })(L00_Preface || (L00_Preface = {}));
