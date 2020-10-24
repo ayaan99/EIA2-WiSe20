@@ -4,12 +4,14 @@ namespace L00_Preface {
 
     function handleLoad(): void {
     
-        var person: string | null = prompt("What's your name?");
+        let person: string | null = prompt("What's your name?");
+
+        let text: HTMLElement = <HTMLElement>document.querySelector("#text");
 
         if (person == null || person == "") {
-            document.querySelector("#text").innerHTML = "I don't know your name yet.";
+            text.innerHTML = "I don't know your name yet.";
         } else {
-            document.querySelector("#text").innerHTML = "Hello " + person + "! Have a nice day :)";
+            text.innerHTML = "Hello " + person + "! Have a nice day :)";
         }
     }
 }

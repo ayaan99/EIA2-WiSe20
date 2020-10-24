@@ -3,12 +3,13 @@ var L00_Preface;
 (function (L00_Preface) {
     window.addEventListener("load", handleLoad);
     function handleLoad() {
-        var person = prompt("What's your name?");
+        let person = prompt("What's your name?");
+        let text = document.querySelector("#text");
         if (person == null || person == "") {
-            document.querySelector("#text").innerHTML = "I don't know your name yet.";
+            text.innerHTML = "I don't know your name yet.";
         }
         else {
-            document.querySelector("#text").innerHTML = "Hello " + person + "! Have a nice day :)";
+            text.innerHTML = "Hello " + person + "! Have a nice day :)";
         }
     }
 })(L00_Preface || (L00_Preface = {}));
