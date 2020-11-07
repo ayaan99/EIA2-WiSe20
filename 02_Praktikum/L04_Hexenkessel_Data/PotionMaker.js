@@ -19,7 +19,6 @@ var L04_PotionMaker;
         recipe.innerHTML += " ";
         let formData = new FormData(document.forms[0]);
         for (let entry of formData) {
-            // console.log(entry);
             switch (entry[0]) {
                 case "potionName":
                     if (entry[1] != "") {
@@ -45,7 +44,6 @@ var L04_PotionMaker;
         }
     }
     function addIngredients(_event) {
-        // console.log("clickIngredient");
         let recipe = document.querySelector("div#instructionOutput");
         let formData = new FormData(document.forms[1]);
         let totalPrice = 0;
@@ -53,17 +51,17 @@ var L04_PotionMaker;
             let selector = "[value='" + entry[1] + "']";
             let ingredient = document.querySelector(selector);
             let itemPrice = Number(ingredient.getAttribute("price"));
-            // let amount: number = parseInt(document.getElementById(ingredient.id + "_amount")).value);
-            // + " " + amount + " " 
+            //Amount funktioniert irgendwie nur richtig, wenn eine Checkbox ausgewählt wurde und alle anderen Stepper auf 0 stehen
+            let amountSelector = entry[1] + "_amount";
+            let amount = Number(formData.get(amountSelector));
             if (entry[0] == "Ingredient" && entry[1] != "") {
-                recipe.innerHTML += "<p>Add: " + entry[1] + " " + "(" + Currency(itemPrice) + ")" + "</p>";
+                recipe.innerHTML += "<p>Add: " + amount + " " + entry[1] + " " + "(" + Currency(itemPrice) + ")" + "</p>";
             }
             totalPrice += itemPrice;
         }
         recipe.innerHTML += "<p><strong>Total: " + Currency(totalPrice);
     }
     function addTempSettings(_event) {
-        // console.log("clickTempSetting");
         let recipe = document.querySelector("div#instructionOutput");
         let formData = new FormData(document.forms[1]);
         for (let entry of formData) {
@@ -87,7 +85,6 @@ var L04_PotionMaker;
         }
     }
     function addStirSettings(_event) {
-        // console.log("clickStirSetting");
         let recipe = document.querySelector("div#instructionOutput");
         let formData = new FormData(document.forms[1]);
         for (let entry of formData) {

@@ -24,7 +24,6 @@ namespace L04_PotionMaker {
         let formData: FormData = new FormData(document.forms[0]);
         
         for (let entry of formData) {
-            // console.log(entry);
             switch (entry[0]) {
                 case "potionName":
                     if (entry[1] != "") {
@@ -51,7 +50,6 @@ namespace L04_PotionMaker {
     }
 
     function addIngredients(_event: MouseEvent): void {
-        // console.log("clickIngredient");
         let recipe: HTMLDivElement = <HTMLDivElement>document.querySelector("div#instructionOutput");
         
         let formData: FormData = new FormData(document.forms[1]);
@@ -62,11 +60,12 @@ namespace L04_PotionMaker {
             let ingredient: HTMLInputElement = <HTMLInputElement>document.querySelector(selector);
             let itemPrice: number = Number(ingredient.getAttribute("price"));
 
-            // let amount: number = parseInt(document.getElementById(ingredient.id + "_amount")).value);
-            // + " " + amount + " " 
+            //Amount funktioniert irgendwie nur richtig, wenn eine Checkbox ausgewählt wurde und alle anderen Stepper auf 0 stehen
+            let amountSelector: string = entry[1] + "_amount";
+            let amount: number = Number(formData.get(amountSelector));
 
             if (entry[0] == "Ingredient" && entry[1] != "") {
-                recipe.innerHTML += "<p>Add: " + entry[1] + " " + "(" + Currency(itemPrice) + ")" + "</p>";
+                recipe.innerHTML += "<p>Add: " + amount + " " + entry[1] + " " + "(" + Currency(itemPrice) + ")" + "</p>";
             }
             totalPrice += itemPrice;
         }
@@ -74,7 +73,6 @@ namespace L04_PotionMaker {
     }
 
     function addTempSettings(_event: MouseEvent): void {
-        // console.log("clickTempSetting");
         let recipe: HTMLDivElement = <HTMLDivElement>document.querySelector("div#instructionOutput");
         let formData: FormData = new FormData(document.forms[1]);
 
@@ -100,7 +98,6 @@ namespace L04_PotionMaker {
     }
 
     function addStirSettings(_event: MouseEvent): void {
-        // console.log("clickStirSetting");
         let recipe: HTMLDivElement = <HTMLDivElement>document.querySelector("div#instructionOutput");
         let formData: FormData = new FormData(document.forms[1]);
 

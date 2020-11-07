@@ -27,7 +27,7 @@ var L04_PotionMaker;
             label.htmlFor = item.name;
             let stepper = document.createElement("input");
             stepper.type = "number";
-            stepper.name = "amount";
+            stepper.name = item.name + "_amount";
             stepper.id = item.name + "_amount";
             stepper.step = "1";
             stepper.value = "0";

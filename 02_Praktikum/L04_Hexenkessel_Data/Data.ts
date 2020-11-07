@@ -1,7 +1,7 @@
 namespace L04_PotionMaker {
     export interface Item {
         name: string;
-        price: number;
+        price?: number;
     }
 
     export interface Data {
