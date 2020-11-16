@@ -9,7 +9,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node Lektionen/L06_Server/cocktailbar/Server/server.js"
+    "start": "node 01_Lektionen/L06_Server/cocktailbar/Server/server.js"
   },
   "repository": {
     "type": "git",
