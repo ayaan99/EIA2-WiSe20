@@ -4,7 +4,8 @@ var L06_CocktailBar;
     window.addEventListener("load", handleLoad);
     let form;
     // let url: string = "index6.html";
-    let url = "http://localhost:5001";
+    // let url: string = "http://localhost:5001";
+    let url = "https://cocktailbar2.herokuapp.com";
     async function handleLoad(_event) {
         console.log("Init");
         let response = await fetch("Data.json");

@@ -2,7 +2,8 @@ namespace L06_CocktailBar {
     window.addEventListener("load", handleLoad);
     let form: HTMLFormElement;
     // let url: string = "index6.html";
-    let url: string = "http://localhost:5001";
+    // let url: string = "http://localhost:5001";
+    let url: string = "https://cocktailbar2.herokuapp.com";
 
     async function handleLoad(_event: Event): Promise<void> {
         console.log("Init");
