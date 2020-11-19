@@ -2,7 +2,7 @@
   "name": "magic-potion-maker",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "",
   "dependencies": {
     "mogodb": "^0.0.1-security"
   },
