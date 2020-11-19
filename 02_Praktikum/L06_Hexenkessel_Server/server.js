@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.L06_CocktailBar = void 0;
 const Http = require("http");
-const Url = require("url");
 var L06_CocktailBar;
 (function (L06_CocktailBar) {
     let server = Http.createServer();
@@ -16,17 +15,16 @@ var L06_CocktailBar;
         console.log("What's up?");
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
-        if (_request.url) {
-            let url = Url.parse(_request.url, true);
-            for (let key in url.query) {
-                if (url.query[key] != "") {
-                    _response.write(key + ": " + url.query[key] + ", ");
-                }
-            }
-            // let jsonString: string = JSON.stringify(url.query);
-            // _response.write(jsonString);
-        }
-        _response.end();
+        // if (_request.url) {
+        //     let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
+        //     for (let key in url.query) {
+        //         if (url.query[key] != "") {
+        //          _response.write(key + ": " + url.query[key] + ", ");
+        //         }
+        //     }
+        // let jsonString: string = JSON.stringify(url.query);
+        // _response.write(jsonString);
     }
+    _response.end();
 })(L06_CocktailBar = exports.L06_CocktailBar || (exports.L06_CocktailBar = {}));
 //# sourceMappingURL=server.js.map
