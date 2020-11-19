@@ -1,7 +1,5 @@
 node_modules
 04_MongoDB
 03_Database
-02_Praktikum/L01_Boxes/L01_Boxes.docx
-02_Praktikum/L02_MiniUno/Konzept/MiniUNO_Konzept_gesamt.docx
-02_Praktikum/AD_Uno.drawio
+*.drawio
 *.docx

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Potion Maker</title>
+    <link rel="stylesheet" href="PotionMaker.css">
+    <script src="GenerateContent.js"></script>
+    <script src="PotionMaker6.js"></script>
+</head>
+<body>
+    <h1>Magic Potion Maker</h1>
+    <form id="createRecipe" method="GET">
+        <h3>Create Recipe</h3>
+        <fieldset>
+            <legend>Name</legend>
+            <input type="text" name="potionName" placeholder="This potion is called...">
+        </fieldset>
+        <fieldset>
+            <legend>Description, Risks, Side Effects</legend>
+            <textarea name="description" placeholder="What should someone know before drinking the potion?"></textarea>
+        </fieldset>
+        <fieldset>
+            <legend>Effects</legend>
+            <input type="radio" name="effect" id="love" value="Love" checked> 
+            <label for="love">Love</label> <br>
+
+            <input type="radio" name="effect" id="speed" value="Speed">
+            <label for="speed">Speed</label> <br>
+
+            <input type="radio" name="effect" id="strength" value="Strength">
+            <label for="strength">Strength</label> <br>
+
+            <input type="radio" name="effect" id="invisibility" value="Invisibility">
+            <label for="invisibility">Invisibility</label> <br>
+
+            <input type="radio" name="effect" id="wisdom" value="Wisdom">
+            <label for="wisdom">Wisdom</label> <br>
+        </fieldset>
+        <fieldset>
+            <legend>Duration of Effect</legend>
+            <span>
+                0 h
+                <input type="range" name="duration" id="Duration" min="0.1" max="24" step="0.1">
+                24 h
+            </span>
+        </fieldset>
+        <button type="button" id="addInfo">Add</button>
+    </form>
+    
+    <form id="addInstructions" method="GET"> 
+        <h3>Add Instructions</h3>
+        <fieldset id="Ingredient">
+            <legend>Ingredients with Amount</legend>
+        </fieldset>
+        <fieldset>
+            <legend>Temperatur in °C</legend>
+            <input type="number" name="temperatur" id="Temperatur" step="1" value="0">
+            <fieldset>
+                <legend>Heating Till</legend>
+                <label for="consistency" >Consistency</label>
+                <input type="text" name="consistencyTemp" placeholder="What Consistency should the potion be in after heating?">
+    
+                <label for="color">Color</label>
+                <input type="color" id="tempColor" name="colorTemp" value="#46006b">
+            </fieldset>
+            <button type="button" id="addTempSetting">Add</button>
+        </fieldset>
+        <fieldset>
+            <legend>Stir</legend>
+            <fieldset>
+                <legend>Stir Intensity</legend>
+                <span>
+                    1
+                    <input type="range" name="intensity" min="1" max="5" step="1">
+                    5
+                </span>
+            </fieldset>
+            <fieldset>
+                <legend>Stir Duration in Minutes</legend>
+                <input type="number" name="stirMin" id="StirMin" step="1" min="0" max="60" value="0">
+            </fieldset>
+                    <fieldset>
+                        <legend>Stir Till</legend>
+                        <label for="consistency">Consistency</label>
+                        <input type="text" name="consistencyStir" placeholder="What Consistency should the potion be in after stiring?">
+            
+                        <label for="color">Color</label>
+                        <input type="color" id="stirColor" name="colorStir" value="#46006b">
+                    </fieldset>
+                    <button type="button" id="addStirSetting">Add</button>
+        </fieldset>
+    </form>
+
+    <div id="recipe">
+        <h2>Your Recipe</h2>
+        <div id="infoOutput"><h3>Information:</h3></div>
+        <div id="instructionOutput"><h3>Instructions:</h3></div>
+        <div id="totalPrice"></div>
+        <button type="submit" id="sendBtn">Send to Prof. Snape</button>
+    </div>
+</body>
+</html>
