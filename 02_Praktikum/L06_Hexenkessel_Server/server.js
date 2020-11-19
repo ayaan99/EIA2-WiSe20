@@ -23,8 +23,8 @@ var L06_CocktailBar;
                     _response.write(key + ": " + url.query[key] + ",");
                 }
             }
-            // let jsonString: string = JSON.stringify(url.query);
-            // _response.write(jsonString);
+            let jsonString = JSON.stringify(url.query);
+            _response.write(jsonString);
         }
         _response.end();
     }
