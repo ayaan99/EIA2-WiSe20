@@ -1,7 +1,6 @@
 namespace L06_PotionMaker {
     
     window.addEventListener("load", handleLoad);
-    // let url: string = "PotionMaker6.html";
     let url: string = "https://magic-potion-maker.herokuapp.com/";
 
     async function handleLoad(_event: Event): Promise<void> {

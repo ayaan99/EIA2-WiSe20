@@ -19,10 +19,12 @@ var L06_CocktailBar;
         if (_request.url) {
             let url = Url.parse(_request.url, true);
             for (let key in url.query) {
-                _response.write(key + ": " + url.query[key] + ", ");
+                if (url.query[key] != "") {
+                    _response.write(key + ": " + url.query[key] + ", ");
+                }
             }
-            let jsonString = JSON.stringify(url.query);
-            _response.write(jsonString);
+            // let jsonString: string = JSON.stringify(url.query);
+            // _response.write(jsonString);
         }
         _response.end();
     }
