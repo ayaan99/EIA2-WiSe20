@@ -2,8 +2,8 @@
 var L06_PotionMaker;
 (function (L06_PotionMaker) {
     window.addEventListener("load", handleLoad);
-    let url = "https://localhost:5001";
-    // let url: string = "https://magic-potion-maker.herokuapp.com/";
+    // let url: string = "https://localhost:5001";
+    let url = "https://magic-potion-maker.herokuapp.com/";
     async function handleLoad(_event) {
         console.log("start");
         let response = await fetch("Data.json");

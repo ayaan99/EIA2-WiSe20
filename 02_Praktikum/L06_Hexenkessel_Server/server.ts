@@ -27,8 +27,8 @@ export namespace L06_CocktailBar {
                 }
             }
 
-            let jsonString: string = JSON.stringify(url.query);
-            _response.write(jsonString);
+            // let jsonString: string = JSON.stringify(url.query);
+            // _response.write(jsonString);
         }
 
         _response.end();
