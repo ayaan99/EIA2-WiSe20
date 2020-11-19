@@ -1,15 +1,14 @@
 {
-  "name": "cocktailbar2",
+  "name": "magic-potion-maker",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@types/mongodb": "^3.5.27",
-    "mogodb": "0.0.1-security"
+    "mogodb": "^0.0.1-security"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node 01_Lektionen/L06_Server/cocktailbar/Server/server.js"
+    "start": "node 02_Praktikum/L06_Hexenkessel_Server/server.js"
   },
   "repository": {
     "type": "git",
