@@ -21,14 +21,14 @@ export namespace L06_CocktailBar {
 
         if (_request.url) {
             let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
-            for (let key in url.query) {
-                if (url.query[key] != "") {
-                 _response.write(key + ": " + url.query[key] + ",");
-                }
-            }
+            // for (let key in url.query) {
+            //     if (url.query[key] != "") {
+            //      _response.write(key + ": " + url.query[key] + ", ");
+            //     }
+            // }
 
-            // let jsonString: string = JSON.stringify(url.query);
-            // _response.write(jsonString);
+            let jsonString: string = JSON.stringify(url.query);
+            _response.write(jsonString);
         }
 
         _response.end();

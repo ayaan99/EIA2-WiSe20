@@ -18,13 +18,13 @@ var L06_CocktailBar;
         _response.setHeader("Access-Control-Allow-Origin", "*");
         if (_request.url) {
             let url = Url.parse(_request.url, true);
-            for (let key in url.query) {
-                if (url.query[key] != "") {
-                    _response.write(key + ": " + url.query[key] + ",");
-                }
-            }
-            // let jsonString: string = JSON.stringify(url.query);
-            // _response.write(jsonString);
+            // for (let key in url.query) {
+            //     if (url.query[key] != "") {
+            //      _response.write(key + ": " + url.query[key] + ", ");
+            //     }
+            // }
+            let jsonString = JSON.stringify(url.query);
+            _response.write(jsonString);
         }
         _response.end();
     }
