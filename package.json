@@ -4,7 +4,9 @@
   "description": "",
   "main": "",
   "dependencies": {
-    "mogodb": "^0.0.1-security"
+    "@types/mongodb": "^3.5.34",
+    "mogodb": "^0.0.1-security",
+    "mongodb": "^3.6.3"
   },
   "devDependencies": {},
   "scripts": {
