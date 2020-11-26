@@ -1,8 +1,8 @@
 namespace L07_PotionMaker {
     
     window.addEventListener("load", handleLoad);
-    let url: string = "http://localhost:5001/";
-    // let url: string = "https://magic-potion-maker.herokuapp.com/";
+    // let url: string = "http://localhost:5001/";
+    let url: string = "https://magic-potion-maker.herokuapp.com/";
 
     async function handleLoad(_event: Event): Promise<void> {
         console.log("start");
