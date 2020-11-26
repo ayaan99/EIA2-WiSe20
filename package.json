@@ -10,7 +10,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node 02_Praktikum/L06_Hexenkessel_Server/server.js"
+    "start": "node 02_Praktikum/L07_Hexenkessel_Server/server.js"
   },
   "repository": {
     "type": "git",
