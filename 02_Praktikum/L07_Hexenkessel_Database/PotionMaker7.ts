@@ -4,6 +4,7 @@ namespace L07_PotionMaker {
     // let url: string = "http://localhost:5001/";
     let url: string = "https://magic-potion-maker.herokuapp.com/";
 
+    
     async function handleLoad(_event: Event): Promise<void> {
         console.log("start");
         
@@ -26,9 +27,9 @@ namespace L07_PotionMaker {
         addStirSetting.addEventListener("click", addStirSettings);
         submit.addEventListener("click", sendRecipe);
         showRecipe.addEventListener("click", showRecipes);
-
+        
     }
-
+    
     async function sendRecipe(_event: Event): Promise<void> {
         console.log("Send recipe");
         let descriptionData: FormData = new FormData(document.forms[0]);
@@ -37,11 +38,18 @@ namespace L07_PotionMaker {
         let instructionQuery: URLSearchParams = new URLSearchParams(<any>instructionData);
         let response: Response = await fetch(url + "?" + descriptionQuery.toString() + "&" + instructionQuery.toString());
         let responseText: string = await response.text();
-        alert("Recipe successfully sent to Hogwarts!" + responseText);
+        alert("Recipe successfully sent to Hogwarts! " + responseText.replace(/<br>/g, " "));
     }
 
-    function showRecipes(): void {
+    // gespeicherte Rezepte anzeigen lassen --> gelöst mithilfe des, im Praktikum, gezeigten Codes von Jessica Manzi
+    async function showRecipes(): Promise<void> {
         console.log("myRecipe");
+        let response: Response = await fetch(url + "?" + "command=retrieve");
+        let responseText: string = await response.text();
+        alert(responseText.replace(/<br>/g, " "));
+
+        // let savedRecipes: HTMLDivElement = <HTMLDivElement>document.querySelector("div#savedRecipes");
+        // savedRecipes.innerHTML = "The Recipes you've already created: " + responseText;
     }
 
     function createRecipe(_event: MouseEvent): void {

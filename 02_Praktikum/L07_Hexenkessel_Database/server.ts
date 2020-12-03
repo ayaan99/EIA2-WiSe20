@@ -44,22 +44,50 @@ export namespace L07_PotionMaker {
 
         if (_request.url) {
             let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
-            for (let key in url.query) {
-                if (url.query[key] != "") {
-                 _response.write(key + ": " + url.query[key] + ", ");
-                }
+            let command: string | string[] | undefined = url.query["command"];
+            if (command == "retrieve") {
+                retrieveRecipes(_request, _response);
+            } else {
+                showRecipe(_request, _response);
+            }
+            // for (let key in url.query) {
+            //     if (url.query[key] != "") {
+            //      _response.write(key + ": " + url.query[key] + ", ");
+            //     }
             }
 
             // let jsonString: string = JSON.stringify(url.query);
             // _response.write(jsonString);
 
-            storeRecipe(url.query);
+            // storeRecipe(url.query);
         }
 
+        // _response.end();
+        
+    function showRecipe(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
+            if (_request.url) {
+                let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
+                let jsonString: string = JSON.stringify(url.query, null, 1);
+                _response.write(jsonString);
+                storeRecipe(url.query);
+            }
+            _response.end();
+        }
+        
+    async function retrieveRecipes(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
+        let allRecipes: Mongo.Cursor = recipes.find();
+        let allRecipesString: string[] = await allRecipes.toArray();
+            
+        for (let recipe of allRecipesString) {
+            for (let key in Object(recipe)) {
+                _response.write(key + ": " + Object(recipe)[key] + "\n");
+                }
+            _response.write("\n");
+            }
         _response.end();
-    }
-
+        }
+        
     function storeRecipe(_recipe: Recipe): void {
         recipes.insert(_recipe);
+        }
     }
-}

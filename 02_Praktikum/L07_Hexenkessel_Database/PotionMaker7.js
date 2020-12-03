@@ -31,10 +31,16 @@ var L07_PotionMaker;
         let instructionQuery = new URLSearchParams(instructionData);
         let response = await fetch(url + "?" + descriptionQuery.toString() + "&" + instructionQuery.toString());
         let responseText = await response.text();
-        alert("Recipe successfully sent to Hogwarts!" + responseText);
+        alert("Recipe successfully sent to Hogwarts! " + responseText.replace(/<br>/g, " "));
     }
-    function showRecipes() {
+    // gespeicherte Rezepte anzeigen lassen --> gelöst mithilfe des, im Praktikum, gezeigten Codes von Jessica Manzi
+    async function showRecipes() {
         console.log("myRecipe");
+        let response = await fetch(url + "?" + "command=retrieve");
+        let responseText = await response.text();
+        alert(responseText.replace(/<br>/g, " "));
+        // let savedRecipes: HTMLDivElement = <HTMLDivElement>document.querySelector("div#savedRecipes");
+        // savedRecipes.innerHTML = "The Recipes you've already created: " + responseText;
     }
     function createRecipe(_event) {
         let recipe = document.querySelector("div#infoOutput");

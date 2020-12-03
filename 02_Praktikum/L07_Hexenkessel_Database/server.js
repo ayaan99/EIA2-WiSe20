@@ -33,14 +33,40 @@ var L07_PotionMaker;
         _response.setHeader("Access-Control-Allow-Origin", "*");
         if (_request.url) {
             let url = Url.parse(_request.url, true);
-            for (let key in url.query) {
-                if (url.query[key] != "") {
-                    _response.write(key + ": " + url.query[key] + ", ");
-                }
+            let command = url.query["command"];
+            if (command == "retrieve") {
+                retrieveRecipes(_request, _response);
             }
-            // let jsonString: string = JSON.stringify(url.query);
-            // _response.write(jsonString);
+            else {
+                showRecipe(_request, _response);
+            }
+            // for (let key in url.query) {
+            //     if (url.query[key] != "") {
+            //      _response.write(key + ": " + url.query[key] + ", ");
+            //     }
+        }
+        // let jsonString: string = JSON.stringify(url.query);
+        // _response.write(jsonString);
+        // storeRecipe(url.query);
+    }
+    // _response.end();
+    function showRecipe(_request, _response) {
+        if (_request.url) {
+            let url = Url.parse(_request.url, true);
+            let jsonString = JSON.stringify(url.query, null, 1);
+            _response.write(jsonString);
             storeRecipe(url.query);
+        }
+        _response.end();
+    }
+    async function retrieveRecipes(_request, _response) {
+        let allRecipes = recipes.find();
+        let allRecipesString = await allRecipes.toArray();
+        for (let recipe of allRecipesString) {
+            for (let key in Object(recipe)) {
+                _response.write(key + ": " + Object(recipe)[key] + "\n");
+            }
+            _response.write("\n");
         }
         _response.end();
     }
