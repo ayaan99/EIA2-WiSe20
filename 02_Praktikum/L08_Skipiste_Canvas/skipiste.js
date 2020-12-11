@@ -13,7 +13,7 @@ var L08_Skipiste_Canvas;
         drawSun({ x: 900, y: 75 });
         drawCloud({ x: 550, y: 125 }, { x: 300, y: 75 });
         drawHill();
-        drawSkilift({ x: 800, y: 250 });
+        drawSkilift({ x: 800, y: 275 });
         drawLifthouse();
         drawSkier({ x: 75, y: 150 }, { x: 150, y: 150 });
         drawTree();
@@ -80,30 +80,15 @@ var L08_Skipiste_Canvas;
         crc.lineTo(1000, 350);
         crc.lineWidth = 2;
         crc.stroke();
-        crc.beginPath();
-        crc.moveTo(800, 275);
-        crc.lineTo(800, 325);
-        crc.lineTo(750, 325);
-        crc.lineTo(750, 350);
-        crc.lineWidth = 3;
-        crc.stroke();
         crc.save();
         crc.translate(_position.x, _position.y);
-        for (let i = 0; i < 4; i++) {
-            crc.save();
-            _position.x += -100;
-            _position.y += -50;
-            crc.translate(_position.x, _position.y);
-            crc.beginPath();
-            crc.moveTo(0, 0);
-            crc.lineTo(0, 50);
-            crc.lineTo(-50, 50);
-            crc.lineTo(-50, 75);
-            crc.lineWidth = 3;
-            crc.stroke();
-            crc.restore();
-            console.log(_position);
-        }
+        crc.beginPath();
+        crc.moveTo(0, 0);
+        crc.lineTo(0, 50);
+        crc.lineTo(-50, 50);
+        crc.lineTo(-50, 75);
+        crc.lineWidth = 3;
+        crc.stroke();
         crc.restore();
     }
     function drawLifthouse() {
